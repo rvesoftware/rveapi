@@ -9,7 +9,7 @@ dotenv.config({
 });
 
 export default {
-    // NODE_ENV: process.env.NODE_ENV || 'development',
+    NODE_ENV: process.env.NODE_ENV || 'development',
     PORT: process.env.PORT || 4200,
     mongodbURL:
     process.env.MONGODB_URI ||
