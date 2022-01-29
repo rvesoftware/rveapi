@@ -6,7 +6,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server/index.js"
+    "start": "set NODE_ENV=development && nodemon --watch backend --exec node --experimental-modules src/server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,10 @@
     "stream-chat": "^5.4.0",
     "twilio": "^3.73.1",
     "url": "^0.11.0"
+  },
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.14.13"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
