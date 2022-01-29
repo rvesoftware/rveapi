@@ -22,6 +22,7 @@
     "mongoose": "^6.1.7",
     "mongoose-paginate-v2": "^1.5.0",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
     "path": "^0.12.7",
     "stream-chat": "^5.4.0",
     "twilio": "^3.73.1",
@@ -30,8 +31,5 @@
   "engines": {
     "node": "16.13.2",
     "npm": "8.1.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
   }
 }
