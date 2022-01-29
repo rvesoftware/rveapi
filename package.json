@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=development && nodemon --watch backend --exec node --experimental-modules src/server/index.js"
+    "start": "set NODE_ENV=development && nodemon src/server/index.js"
   },
   "keywords": [],
   "author": "",
