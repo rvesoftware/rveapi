@@ -10,6 +10,7 @@ import bcrypt from 'bcrypt'
 import jwt  from "jsonwebtoken";
 import config from "../helpers/config.js";
 import crypto from 'crypto'
+import {generateToken} from '../libs/chackAuth.js'
 
 const api_key = config.STREAM_API_KEY;
 const api_secret = config.STREAM_API_SECRET;
@@ -40,7 +41,9 @@ export const signup = async (req, res) => {
         const tokenChat = serverClient.createUserToken(userId);
 
         const newAdmin = new Admin({tokenChat, name, middlename, middlelastname, lastname, username, email, phone, password: hashedPassword, image });
-        const token = jwt.sign({ _id: newAdmin._id }, config.JWT_SIGNIN_KEY, {});
+        // const token = jwt.sign({ _id: newAdmin._id }, config.JWT_SIGNIN_KEY, {});
+
+        const token = generateToken(newAdmin)
 
         newAdmin.save();
 
@@ -97,6 +100,7 @@ export const signin = async (req, res) => {
       _id: admin._id,
       username: admin.username,
       name: admin.name,
+      lastname: admin.lastname,
       password: admin.password,
       image: admin.image,
       tokenChat: admin.tokenChat,
