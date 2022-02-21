@@ -3,6 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import adminRouter from "../routes/adminRouter.js";
 import notesRouter from "../routes/notesRouter.js";
+import hardwarePostRouter from "../routes/hardwarePostRouter.js";
 import rp from "request-promise";
 
 const app = express();
@@ -73,6 +74,8 @@ app.use("/api/v1/banc", async() => {
 
 app.use("/api/v1/admins", adminRouter);
 app.use("/api/v1/note", notesRouter);
+app.use("/api/v1/hardwarePosts", hardwarePostRouter);
+
 
 
 export default app;

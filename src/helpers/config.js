@@ -20,7 +20,7 @@ export default {
     // CLIENT_URL:'http://localhost:3000',
     // RESET_PASSWORD_KEY:'passwordresetkey123456',
     JWT_SIGNIN_KEY:'signinkey1234',
-    STREAM_API_KEY: 'vmqupdngewz4',
-    STREAM_API_SECRET: '37twhddgwyas9abu5ku2q72fr45yw25fequx6audkqtg4s2jyt6pxfhh5z7cq3v8',
-    STREAM_APP_ID: 1163933
+    STREAM_API_KEY: '65jgd4bt2dau',
+    STREAM_API_SECRET: 'kmc454mz5hmugkh4st27w9y2mr5w7gwuwy2nmgmecajwyaqyhfpdkb4qhynvmqne',
+    STREAM_APP_ID: 1168799
 }

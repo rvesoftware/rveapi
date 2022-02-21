@@ -70,8 +70,6 @@ export const signin = async (req, res) => {
 
     const {users} = await client.queryUsers({name:username})
 
-    console.log(users)
-
     if(!users.length) return res.status(400).json({message: 'User not found'});
 
 
@@ -80,6 +78,8 @@ export const signin = async (req, res) => {
     }
 
     const admin = await Admin.findOne({ username });
+
+    console.log(admin)
 
     if (!admin) {
       errors.general = 105;
