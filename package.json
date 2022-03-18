@@ -5,13 +5,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server/index.js"
+    "start": "nodemon src/api/v0/server/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cloudinary": "^1.28.1",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dompurify": "^2.3.5",
@@ -20,15 +21,18 @@
     "getstream": "^7.4.1",
     "jsdom": "^19.0.0",
     "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
     "marked": "^4.0.12",
     "mongoose": "^6.1.7",
     "mongoose-paginate-v2": "^1.5.0",
     "morgan": "^1.10.0",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15",
     "path": "^0.12.7",
     "request-promise": "^4.2.6",
     "slugify": "^1.6.5",
     "stream-chat": "^5.4.0",
+    "streamifier": "^0.1.1",
     "twilio": "^3.73.1",
     "url": "^0.11.0"
   },

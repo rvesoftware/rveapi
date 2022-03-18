@@ -3,7 +3,17 @@ import morgan from "morgan";
 import cors from "cors";
 import adminRouter from "../routes/adminRouter.js";
 import notesRouter from "../routes/notesRouter.js";
+import productRouter from "../routes/productRouter.js";
 import hardwarePostRouter from "../routes/hardwarePostRouter.js";
+import ordersRouter from "../routes/orderRouter.js";
+import computerRouter from "../routes/computerRouter.js";
+import userRouter from '../routes/userRouter.js';
+import clientRouter from '../routes/clientRouter.js';
+import quotationRouter from '../routes/quotationRouter.js';
+import sellsRouter from '../routes/sellsRouter.js';
+import categoryRouter from '../routes/categoryRouter.js';
+import orderRouter from '../routes/orderRouter.js';
+import taskRouter from '../routes/taskRouter.js';
 import rp from "request-promise";
 
 const app = express();
@@ -73,9 +83,10 @@ app.use("/api/v1/banc", async() => {
 // Routes
 
 app.use("/api/v1/admins", adminRouter);
-app.use("/api/v1/note", notesRouter);
+app.use("/api/v1/notes", notesRouter);
 app.use("/api/v1/hardwarePosts", hardwarePostRouter);
-
-
+app.use("/api/v1/orders", ordersRouter);
+app.use("/api/v1/products", productRouter);
+app.use('/api/v1/computers', computerRouter);
 
 export default app;

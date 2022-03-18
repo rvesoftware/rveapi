@@ -2,20 +2,23 @@ import Post from "../models/Post.js";
   
 export const createPost = async (req, res) => {
   
-  console.log('ENTRO')
+  console.log('Enter to Create Post')
   try{
 
-    const {title, desc} = req.body;
+    const {title, description, category, image, username, userphoto, sanitizedHtml} = req.body;
+    const newPost = new Post({
+      title,
+      description,
+      sanitizedHtml,
+      category,
+      image,
+      username,
+      userphoto
+  })
+  
+    await newPost.save();
+    res.send(newPost)
 
-    let newNote = await Note({
-      title: 'Untitled',
-      desc: '',
-    })
-
-    await newNote.save();
-
-    res.send(newNote)
-    
   }catch(err){
     console.log(err)
   } 

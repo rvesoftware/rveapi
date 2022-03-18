@@ -16,6 +16,19 @@ const api_key = config.STREAM_API_KEY;
 const api_secret = config.STREAM_API_SECRET;
 const app_id = config.STREAM_APP_ID;
 
+
+export const getAllAdmins = async (req, res) => {
+  try{
+    const admins = await Admin.find({});
+    console.log(admins)
+    res.send(admins)
+  }catch(err){
+    console.log(err)
+  }
+};
+
+
+
 export const signup = async (req, res) => {
     const {name, middlename, lastname, middlelastname, username, email, phone, password, image} = req.body
     
@@ -62,6 +75,7 @@ export const signup = async (req, res) => {
 export const signin = async (req, res) => {
   const { username, password } = req.body;
 
+  console.log(req.body)
   try {
     const { errors, valid } = validateSigninAdminInput(username, password);
 

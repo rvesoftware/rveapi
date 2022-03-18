@@ -22,5 +22,9 @@ export default {
     JWT_SIGNIN_KEY:'signinkey1234',
     STREAM_API_KEY: 'pw6btk4aq5wt',
     STREAM_API_SECRET: '5vknznhxb3jenzys5gkjmc7shvew7e6fzyp4yktng6peaa8cjqp558zaxcmmuytk',
-    STREAM_APP_ID: 1169200
+    STREAM_APP_ID: 1169200,
+    accessKeyId: process.env.accessKeyId || 'AKIAVHJK4GQ6BBLS6M62',
+    secretAccessKey:
+    process.env.secretAccessKey || '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',
+
 }
