@@ -3,6 +3,7 @@ import {generateToken} from '../libs/utils.js';
 import Task from "../models/Task.js";
 
 export const findAllTasks = async(req, res) => {
+    
     try
     {
         const {size, page} = req.query;

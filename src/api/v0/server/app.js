@@ -83,6 +83,7 @@ app.use("/api/v1/banc", async() => {
 // Routes
 
 app.use("/api/v1/admins", adminRouter);
+app.use("/api/v1/tasks", taskRouter);
 app.use("/api/v1/notes", notesRouter);
 app.use("/api/v1/hardwarePosts", hardwarePostRouter);
 app.use("/api/v1/orders", ordersRouter);
