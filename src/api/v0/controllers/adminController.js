@@ -103,7 +103,8 @@ export const signin = async (req, res) => {
     const match = await bcrypt.compare(password, admin.password);
     if (!match) {
       errors.general = 108;
-      throw new Error(108, { errors });
+      console.log(errors)
+      // throw new Error(108, { errors });
     }
 
     // const token = jwt.sign({ _id: admin._id }, config.JWT_SIGNIN_KEY, {});
@@ -123,6 +124,6 @@ export const signin = async (req, res) => {
     });
   } catch (err) {
     console.log(err)
-    throw new Error(err);
+    // throw new Error(err);
   }
 };
