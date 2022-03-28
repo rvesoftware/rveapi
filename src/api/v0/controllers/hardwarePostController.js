@@ -26,6 +26,7 @@ export const createPost = async (req, res) => {
   
 
 export const getOnePost = async (req, res) => {
+  console.log("!!!")
   try{
     const post = await Post.findById(req.params.id);
 
@@ -52,12 +53,14 @@ export const getOnePost = async (req, res) => {
 };
   
 export const updatePost = async (req, res) => {
-  try{
-    const {title, description, sanitizedHtml, category, image} = req.body;
+  console.log('!!!!')
 
+  try{
+    const {title, description, sanitizedHtml, category, image} = req.body.props;
     const postId = req.params.id;
     const post = await Post.findById(postId);
 
+    console.log(sanitizedHtml)
     if(post){
       post.title = title;
       post.description =  description;
