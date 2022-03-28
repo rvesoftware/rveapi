@@ -39,16 +39,19 @@ export const createPost = async (req, res) => {
   
 export const updatePost = async (req, res) => {
   try{
-    const {title, desc} = req.body;
+    const {title, description, sanitizedHtml, category, image} = req.body;
 
-    const noteId = req.parems.id;
-    const note = await Note.findById(noteId);
+    const postId = req.params.id;
+    const post = await Post.findById(postId);
 
-    if(note){
-      note.title = title;
-      note.desc - desc;
-      const updateNote = await note.save();
-      res.send(updateNote)
+    if(post){
+      post.title = title;
+      post.description =  description;
+      post.sanitizedHtml = sanitizedHtml;
+      post.category =  category;
+      post.image = image;
+      const updatePost = await post.save();
+      res.send(updatePost)
     }
   }catch(err)
   {
