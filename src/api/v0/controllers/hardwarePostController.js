@@ -25,6 +25,20 @@ export const createPost = async (req, res) => {
 }
   
 
+export const getOnePost = async (req, res) => {
+  try{
+    const post = await Post.findById(req.params.id);
+
+    if(post){
+      res.send(post);
+    }else{
+      res.status(404).send({message: 'Post Not Found'})
+    }
+  }catch(err){
+    console.log(err)
+  }
+}
+
   export const getAllPosts = async (req, res) => {
 
     try{
