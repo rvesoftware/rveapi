@@ -79,12 +79,12 @@ export const signin = async (req, res) => {
   try {
     const { errors, valid } = validateSigninAdminInput(username, password);
 
-    const serverClient = connect(api_key, api_secret, app_id);
-    const client = StreamChat.getInstance(api_key, api_secret);
+    // const serverClient = connect(api_key, api_secret, app_id);
+    // const client = StreamChat.getInstance(api_key, api_secret);
 
-    const {users} = await client.queryUsers({name:username})
+    // const {users} = await client.queryUsers({name:username})
 
-    if(!users.length) return res.status(400).json({message: 'User not found'});
+    // if(!users.length) return res.status(400).json({message: 'User not found'});
 
 
     if (!valid) {
@@ -107,9 +107,9 @@ export const signin = async (req, res) => {
       // throw new Error(108, { errors });
     }
 
-    // const token = jwt.sign({ _id: admin._id }, config.JWT_SIGNIN_KEY, {});
+    const token = jwt.sign({ _id: admin._id }, config.JWT_SIGNIN_KEY, {});
 
-    const token = serverClient.createUserToken(users[0].id)
+    // const token = serverClient.createUserToken(users[0].id)
 
     res.send({
       _id: admin._id,
